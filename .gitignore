@@ -1,6 +1,6 @@
 /vendor
-/.php_cs.cache
 .DS_Store
+*.cache
 
 
 # Editor directories and files
