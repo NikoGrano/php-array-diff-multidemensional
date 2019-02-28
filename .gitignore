@@ -1,0 +1,13 @@
+/vendor
+/.php_cs.cache
+.DS_Store
+
+
+# Editor directories and files
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+.idea
