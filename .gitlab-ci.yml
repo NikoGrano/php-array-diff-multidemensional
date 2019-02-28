@@ -24,10 +24,6 @@ before_script:
   script:
     - composer test
 
-php:70:
-  image: php:7.0
-  extends: .phpunit
-
 php:71:
   image: php:7.1
   extends: .phpunit
@@ -39,12 +35,6 @@ php:72:
 php:73:
   image: php:7.3
   extends: .phpunit
-
-cs:70:
-  image: php:7.0
-  stage: test
-  script:
-    - composer cs:validate
 
 cs:71:
   image: php:7.1
