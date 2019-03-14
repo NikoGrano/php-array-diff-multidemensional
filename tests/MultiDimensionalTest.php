@@ -36,8 +36,8 @@ final class MultiDimensionalTest extends TestCase
             'a' => 'b',
             'c' => \uniqid(),
         ];
-        $this->assertEquals(\count(Diff::diff($new, $old)), 1);
-        $this->assertTrue(isset(Diff::diff($new, $old)['c']));
+        $this->assertCount(1, Diff::diff($new, $old));
+        $this->assertNotEmpty(Diff::diff($new, $old)['c']);
     }
 
     public function testDetectsChangeFromStringToArray(): void
@@ -53,7 +53,7 @@ final class MultiDimensionalTest extends TestCase
             'a' => 'b',
             'c' => \uniqid(),
         ];
-        $this->assertEquals(\count(Diff::diff($new, $old)), 1);
+        $this->assertCount(1, Diff::diff($new, $old));
         $this->assertIsArray(Diff::diff($new, $old)['c']);
     }
 
@@ -73,7 +73,7 @@ final class MultiDimensionalTest extends TestCase
                 'f' => \uniqid(),
             ],
         ];
-        $this->assertEquals(\count(Diff::diff($new, $old)), 1);
-        $this->assertTrue(isset(Diff::diff($new, $old)['c']['f']));
+        $this->assertCount(1, Diff::diff($new, $old));
+        $this->assertNotEmpty(Diff::diff($new, $old)['c']['f']);
     }
 }
